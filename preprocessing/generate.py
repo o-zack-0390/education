@@ -53,18 +53,18 @@ def generate_blank(bsg_list, marker, path):
 	if marker == "/* ○ ○ ○ */":
 		order = 1
 	
-	# bsg.txtの行数まで繰り返し
+#   bsg.txtの行数まで繰り返し
 	for i in range(bsg_size):
 		bsg_line   = bsg_list[i]
 		bsg_length = len(bsg_line)
 		
-		# ソースコード行数まで繰り返し
+#       ソースコード行数まで繰り返し
 		for j in range(code_size):
 			index     = rand_list[j]
 			code_line = code_list[index]
 			pos       = code_line.find(bsg_line)
 			
-			#   変換対象がある     空欄が生成されてない
+#               変換対象がある       空欄が生成されてない
 			if (-1 < pos) and (index not in bi_list):
 			
 				if escape(code_line) == 0 :
@@ -103,19 +103,19 @@ def word_blank_checker(line, target):
 	while (start_pos != -1) and (end_pos != -1):
 		flag = 0
 		
-		# 最初の変数が空欄の場合
+#       最初の変数が空欄の場合
 		if start_pos == 0:
 			end_str = line[end_pos+2]
 			
-			# */ の次が文字か数字
+#           */ の次が文字か数字
 			if (end_str.isalpha() == True) or (end_str.isdigit() == True):
 				flag = 1
 			
-			# 後の文字が _
+#           後の文字が _
 			elif end_str == '_':
 				flag = 1
 			
-			# 空欄を解除
+#           空欄を解除
 			if flag == 1:
 				line = target + line[end_pos+2:]
 		
@@ -123,19 +123,19 @@ def word_blank_checker(line, target):
 			start_str = line[start_pos-1]
 			end_str   = line[end_pos+2]
 			
-			# /* の直前が文字か数字
+#           /* の直前が文字か数字
 			if (start_str.isalpha() == True) or (start_str.isdigit() == True):
 				flag = 1
 		
-			# */ の直後が文字か数字
+#           */ の直後が文字か数字
 			elif (end_str.isalpha() == True) or (end_str.isdigit()   == True):
 				flag = 1
 			
-			# 前後の文字どちらかが _ の場合
+#           前後の文字どちらかが _ の場合
 			elif (start_str == '_') or (end_str == '_'):
 				flag = 1
 			
-			# 空欄を解除
+#           空欄を解除
 			if flag == 1:
 				line = line[:start_pos] + target + line[end_pos+2:]
 		
@@ -171,32 +171,32 @@ def symbol_blank_checker(line, target):
 # 空欄にしない構文をバインドする
 def escape(line):
 	
-	# コメント
+#   コメント
 	if "/*" in line:
 		return 1
 	
 	elif "*/" in line:
 		return 1
 	
-	# #define, printf などの定義
+#   #define, printf などの定義
 	elif '#' in line:
 		return 1
 	
 	elif "printf" in line:
 		return 1
 
-	# 関数名のプロトタイプ
+#   関数名のプロトタイプ
 	elif re.compile(r'(int|void|char|struct|double)( |\*)+[a-zA-Z0-9_]+\(').search(line):
 		return 1
 
 	elif re.compile(r'(int|void|char|struct|double)(( |\*)+[a-zA-Z0-9_]+)+\(').search(line):
 		return 1
 	
-	# 配列の要素の初期値 x = {1,2,3}; ← 空欄になると推測不可能なので出題しない
+#   配列の要素の初期値 x = {1,2,3}; ← 空欄になると推測不可能なので出題しない
 	elif re.compile(r'( *} *; *)$').search(line) != None :
 		return 1
 	
-	# "文字列" ("Canada", "America", "Brazil") ← 空欄になると推測不可能なので出題しない
+#   "文字列" ("Canada", "America", "Brazil") ← 空欄になると推測不可能なので出題しない
 	elif ( '"' in line ) and ("scanf" not in line):
 		return 1
 	
@@ -232,6 +232,21 @@ def print_blank():
 		print("(行番号,置換文字) : ({},{})\n".format(print_list[i][0]+1, print_list[i][1]))
 
 
+def generate():
+    global bsg_list
+    global bsg2_list
+    global marker1
+    global marker2
+    global path5
+    global path6
+    
+    read_file()
+    generate_blank(bsg2_list, marker2, path6)
+    generate_blank(bsg_list , marker1, path5)
+    write_prob(path2)
+    print_blank()
+
+
 # main
 s_list = [                                            \
             ' ', ',', ';', '\t', '\n', '=',           \
@@ -262,12 +277,6 @@ path3     = "data/bsg.txt"
 path4     = "data/bsg2.txt"
 path5     = "data/word_id_1.txt"
 path6     = "data/word_id_2.txt"
-
-read_file()
-generate_blank(bsg2_list, marker2, path6)
-generate_blank(bsg_list , marker1, path5)
-write_prob(path2)
-print_blank()
 
 '''
 実行コマンド

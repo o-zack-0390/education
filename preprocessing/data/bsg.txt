@@ -1,1 +1,9 @@
+struct
+rectangle
 y
+ll
+b
+sqrt
+double
+x
+inputr

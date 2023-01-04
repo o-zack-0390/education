@@ -3,24 +3,22 @@ import random
 import copy
 import sys
 
-
-def read_value():
-	global path1
+def read_value(path1):
 	f    = open(path1)
 	line = f.readline()
 	
-	# 分類対象の文書数と単語数
+#   分類対象の文書数と単語数
 	doc_inf    = line.split(' ')
 	total_doc  = int(doc_inf[0])
 	total_word = int(doc_inf[1])
 	v          = doc_inf[2]
-	#print(total_doc, total_word, v)
+#   print(total_doc, total_word, v)
 	
 	list        = []
 	word_list   = []
 	TF_list     = []
 	TF_IDF_list = []
-	IDF_list    = [0] *total_word
+	IDF_list    = [0] * total_word
 	
 	for i in range(total_doc):
 		line = f.readline().split(' ')
@@ -41,19 +39,19 @@ def read_value():
 
 def TF_IDF(word_list, TF_list, IDF_list, TF_IDF_list, total_doc):
 	
-	# 文書数まで繰り返し
+#   文書数まで繰り返し
 	for i in range(total_doc):
 		word_num = len(word_list[i])
 		
-		# 一つの文書の単語数まで繰り返し
+#       一つの文書の単語数まで繰り返し
 		for j in range(word_num):
 			IDF_list[word_list[i][j]] += 1
 	
-	# 文書数まで繰り返し
+#   文書数まで繰り返し
 	for i in range(total_doc):
 		word_num = len(word_list[i])
 		
-		# 一つの文書の単語数まで繰り返し
+#       一つの文書の単語数まで繰り返し
 		for j in range(word_num):
 			IDF_list[word_list[i][j]] = math.log2(total_doc / IDF_list[word_list[i][j]] + 1)
 			TF_IDF_list[i][j] = TF_list[i][j] * IDF_list[word_list[i][j]]
@@ -61,7 +59,7 @@ def TF_IDF(word_list, TF_list, IDF_list, TF_IDF_list, total_doc):
 	return IDF_list, TF_IDF_list
 
 
-def init_data(word_list, TF_IDF_list, total_doc, total_word):
+def init_data(path2, word_list, TF_IDF_list, total_doc, total_word):
     ID_list = [0]*total_word
 	
     for i in range(total_doc):
@@ -71,11 +69,10 @@ def init_data(word_list, TF_IDF_list, total_doc, total_word):
             pos          = word_list[i][j]
             ID_list[pos] = TF_IDF_list[i][j]
     
-    return read_name(ID_list)
+    return read_name(path2, ID_list)
 
 
-def read_name(ID_list):
-	global path2
+def read_name(path2, ID_list):
 	f     = open(path2)
 	line  = f.readline()
 	index = 0
@@ -90,7 +87,7 @@ def read_name(ID_list):
 	return ID_list
 
 
-def word_sort(ID_list, total_word):
+def word_sort(ID_list, total_doc, total_word):
 	ID_list = sorted(ID_list, key = lambda x:x[1], reverse = True)
 	q_sum   = int(total_word / 1.5) - 1
 	q_roop  = int(total_doc / 7)
@@ -144,8 +141,7 @@ def rand_ints_nodup(a, b, k):
 	return ns
 
 
-def write_list(list):
-	global path3
+def write_list(path3, list):
 	f    = open(path3, 'w', encoding="utf-8", newline='')
 	size = len(list)
 	
@@ -158,44 +154,39 @@ def write_list(list):
 def print_list(list):
 	size = len(list)
 	for i in range(size):
-		print("{} : {}".format(i+1, list[i]))
+		print("{} : [{}, {}]".format(i+1, list[i][0], round(list[i][1],1)))
 
 
-order = int(input())
-
-if order == 0:
-	path1 = "data/line_inf_1.txt"
-	path2 = "data/word_id_1.txt"
-	path3 = "data/bsg.txt"
+def TFIDF(order):
+    
+    if order == 0:
+        path1 = "data/line_inf_1.txt"
+        path2 = "data/word_id_1.txt"
+        path3 = "data/bsg.txt"
 	
-elif order == 1:
-	path1 = "data/line_inf_2.txt"
-	path2 = "data/word_id_2.txt"
-	path3 = "data/bsg2.txt"
+    elif order == 1:
+        path1 = "data/line_inf_2.txt"
+        path2 = "data/word_id_2.txt"
+        path3 = "data/bsg2.txt"
 
-else:
-	print("input error")
-	sys.exit()
+    else:
+        print("input error")
+        sys.exit()
 
-word_list, TF_list, IDF_list, TF_IDF_list, total_doc, total_word \
-= read_value()
+    word_list, TF_list, IDF_list, TF_IDF_list, total_doc, total_word \
+    = read_value(path1)
 
-IDF_list, TF_IDF_list \
-= TF_IDF(word_list, TF_list, IDF_list, TF_IDF_list, total_doc)
+    IDF_list, TF_IDF_list \
+    = TF_IDF(word_list, TF_list, IDF_list, TF_IDF_list, total_doc)
 
-ID_list \
-= init_data(word_list, TF_IDF_list, total_doc, total_word)
+    ID_list \
+    = init_data(path2, word_list, TF_IDF_list, total_doc, total_word)
 
-if order == 0:
-	ID_list, q_list = word_sort(ID_list, total_word)
+    if order == 0:
+        ID_list, q_list = word_sort(ID_list, total_doc, total_word)
 
-else:
-	ID_list, q_list = symbol_sort(ID_list, total_word)
+    else:
+        ID_list, q_list = symbol_sort(ID_list, total_word)
 
-write_list(q_list)
-print_list(ID_list)
-
-'''
-実行コマンド
-python TF-IDF.py
-'''
+    write_list(path3, q_list)
+    #print_list(ID_list)

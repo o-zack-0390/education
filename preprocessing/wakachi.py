@@ -19,12 +19,15 @@ def word_mining(word_line):
 	if flag == 1:
 		word_line = ''
 	
-	# #define, printf などの定義
+	# #define, printf, scanf などの定義
 	if  '#' in word_line :
 		word_line = ''
 	
 	elif "printf" in word_line :
 		word_line = ''
+	
+	elif "scanf"  in word_line :
+		word_line = word_line[word_line.find('",'):]
 	
 	# main関数
 	elif re.compile(r'(int|void|) main\(').search(word_line) != None :
@@ -144,16 +147,31 @@ def print_list(list):
 		print("{} : {}".format(i, list[i]))
 
 
+def wakachi():
+    global path1
+    
+    f    = open(path1, 'r', encoding="utf-8")
+    line = f.readline()
+
+    while line:
+        pos_mining(word_mining(line))
+        line = f.readline()
+
+    write_list(word_list, symbol_list)
+    #print_list(pos_list)
+    f.close()
+
+
 #main
-s_list = [                                            \
+s_list = [                                              \
 	          "<=", ">=", "==", "!=",                   \
 	          "+=", "-=", "*=", "/=", "%=", "++", "--", \
-	          "&&", "||",                               \
-	          "->",                                     \
+			  "&&", "||",                               \
+			  "->",                                     \
 	          '*', '+', '-', '/', '%',                  \
-	          '<', '>',                                 \
-	          '.', '&', '|', '?',                       \
-	       ]
+			  '<', '>',                                 \
+			  '.', '&', '|', '?',                       \
+			  ]
 """
 '[', ']', '(', ')', '{', '}'
 
@@ -169,13 +187,3 @@ flag        = 0
 path1       = "data/ans.c"
 path2       = "data/wakachi_1.txt"
 path3       = "data/wakachi_2.txt"
-f           = open(path1, 'r', encoding="utf-8")
-line        = f.readline()
-
-while line:
-	pos_mining(word_mining(line))
-	line = f.readline()
-
-write_list(word_list, symbol_list)
-#print_list(pos_list)
-f.close()
