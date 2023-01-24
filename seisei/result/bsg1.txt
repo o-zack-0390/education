@@ -1,0 +1,15 @@
+a
+k
+square3
+square2
+square1
+int
+void
+return
+break
+while
+stdio
+if
+main
+include
+h

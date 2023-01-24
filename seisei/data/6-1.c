@@ -5,20 +5,20 @@ int * square3(int *a);
 
 int main(void)
 {
-	int /* □ □ □ */;
+	int k;
 	while(1)
 	{
 		printf("k="); scanf("%d",&k);
-		if(k/* ○ ○ ○ */0) break;
+		if(k<=0) break;
 
         printf("k value: %d\n",k);
-        k=/* □ □ □ */(k);
+        k=square1(k);
 
         printf("Now, k=%d\n",k);
-        /* □ □ □ */(&k);
+        square2(&k);
 
         printf("Now, k=%d\n",k);
-        square3(square3(/* ○ ○ ○ */k));
+        square3(square3(&k));
 
         printf("Now, k=%d\n\n",k);
 	}
@@ -27,12 +27,12 @@ int main(void)
 }
 
 int square1(int a){
-    a=a/* ○ ○ ○ */a;
+    a=a*a;
     return a;
 }
 
 void square2(int *a){
-	*/* □ □ □ */=(*/* □ □ □ */)*(*/* □ □ □ */);
+	*a=(*a)*(*a);
 }
 
 int* square3(int *a){

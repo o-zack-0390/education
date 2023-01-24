@@ -1,0 +1,36 @@
+ include  stdio h  
+ define MAX 100 
+ 
+int main void   
+        int stack MAX  stackPtr  
+        int num data  
+ 
+        while    
+                printf    
+                scanf   d   num   
+                if num    
+                        return  
+                  
+                else if num    
+                        printf    
+                        scanf   d   stack stackPtr    
+                        stackPtr    
+                  
+                else if num    
+                        if stackPtr   
+                                printf    
+                        else  
+                        printf  stack stackPtr    
+                        stackPtr    
+                          
+                  
+                else if num    
+                        if stackPtr    
+                                        printf    
+                                  
+                        for int i stackPtr i  i     
+                                printf  stack i    
+                          
+                  
+          
+ 
