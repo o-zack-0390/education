@@ -1,41 +1,63 @@
-#include <stdio.h>
-int square1(int a);
-void square2(int *a);
-int * square3(int *a);
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
 
-int main(void)
-{
-	int /* □ □ □ */;
-	while(1)
-	{
-		printf("k="); scanf("%d",&k);
-		if(k/* ○ ○ ○ */0) break;
+struct /* □ □ □ */ {
+  double /* □ □ □ */;
+  double /* □ □ □ */;
+};
 
-        printf("k value: %d\n",k);
-        k=/* □ □ □ */(k);
+struct /* □ □ □ */{
+  struct point ll;
+  struct point /* □ □ □ */;
+};
 
-        printf("Now, k=%d\n",k);
-        /* □ □ □ */(&k);
+struct rectangle inputr(void);
+double area(struct rectangle r);
+double lengthd(struct rectangle r);
+int    issquare(struct rectangle r);
 
-        printf("Now, k=%d\n",k);
-        square3(square3(/* ○ ○ ○ */k));
-
-        printf("Now, k=%d\n\n",k);
-	}
-
-    return 0;
+int main(void){
+  /* □ □ □ */ rectangle a;
+  
+  printf("A:\n");
+  a = /* □ □ □ */();
+  
+  printf("The area of A is %f\n", area(a));
+  printf("The length of the diagonal of A is %f\n", lengthd(a));
+  printf("A is ");
+  if (!issquare(a)) printf("NOT ");
+  printf("a square");
+  
+  return 0;
 }
 
-int square1(int a){
-    a=a/* ○ ○ ○ */a;
-    return a;
+struct rectangle inputr(void){
+  struct rectangle r;
+  
+  printf("\tInput the coordinate of the lower left  corner: ");
+  scanf ("\n(/* ○ ○ ○ */lf,/* ○ ○ ○ */lf)", &r.ll.x, &r.ll.y);
+  printf("\tInput the coordinate of the upper right corner: ");
+  scanf ("\n(%/* □ □ □ */,%/* □ □ □ */)", &r.ur.x, &r.ur.y);
+
+  if ( (r.ll.x /* ○ ○ ○ */ r.ur.x) || (r.ll.y /* ○ ○ ○ */ r.ur.y) ){
+    fprintf(stderr, "Inputs are invalid.\n");
+    exit(1);
+  }
+  
+  return r;
 }
 
-void square2(int *a){
-	*/* □ □ □ */=(*/* □ □ □ */)*(*/* □ □ □ */);
+double area(struct rectangle r){
+  return (r.ur.x - r./* □ □ □ */.x) * (r.ur.y - r./* □ □ □ */.y);
 }
 
-int* square3(int *a){
-    *a=(*a)*(*a);
-    return a;
+double lengthd(struct rectangle r){
+  double vertical = ((r.ur.x - r.ll.x) /* ○ ○ ○ */ (r.ur.x - r.ll.x));
+  double side     = ((r.ur.y /* ○ ○ ○ */ r.ll.y) * (r.ur.y /* ○ ○ ○ */ r.ll.y));
+  return sqrt(/* □ □ □ */ + side);
+}
+
+int issquare(struct rectangle r){
+  return /* □ □ □ */.ur.x-/* □ □ □ */.ll.x == /* □ □ □ */.ur.y-/* □ □ □ */.ll.y;
 }
