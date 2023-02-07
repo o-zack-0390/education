@@ -10,12 +10,12 @@ struct cityLN   reverseCities struct cityLN  ct
 struct cityLN   reverseCitiesRecursive struct cityLN  ct struct cityLN  bt   
  
 int main    
-        struct cityLN c1   Hiratuka  257829 NULL   
-        c2   Odawara  190391 NULL   
-        c3   Yokosuka  395706 NULL   
-        c4   Kamakura  172311 NULL   
-        c5   Chigasaki  241991 NULL   
-        c6   Fujisawa  434110 NULL   
+        struct cityLN c1   257829 NULL   
+        c2   190391 NULL   
+        c3   395706 NULL   
+        c4   172311 NULL   
+        c5   241991 NULL   
+        c6   434110 NULL   
         struct cityLN  head NULL  
         head  c1  c1 next  c2  c2 next  c3  c3 next  c4  c4 next  c5  c5 next  c6  
         printf    
@@ -34,7 +34,7 @@ void printCities struct cityLN  ct
                 printCities ct  next   
           
         else 
-                putchar  \n    
+                putchar    
   
  
  

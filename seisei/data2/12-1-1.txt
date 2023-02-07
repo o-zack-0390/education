@@ -14,20 +14,20 @@ EXP new_node int t int v EXP l EXP r
    return x  
   
 EXP v_node int v   
-   return new_node  v  v NULL NULL   
+   return new_node  v NULL NULL   
   
 EXP o_node int o  EXP l  EXP r   
-   return new_node  o  o l r   
+   return new_node  o l r   
   
 int calc EXP e   
-  if e  type   v   
+  if e  type    
     return e  val  
  
-  else if e  type   o    
+  else if e  type     
  
-    if e  val       
+    if e  val    
       return calc e  left  calc e  right   
-    if e  val       
+    if e  val    
       return  calc e  left  calc e  right    
     
  
@@ -43,9 +43,9 @@ int main void
    n2   v_node   
    n3   v_node   
    n4   v_node   
-   n5   o_node     n1 n3   
-   n6   o_node     n2 n4   
-   n7   o_node     n5 n6   
+   n5   o_node  n1 n3   
+   n6   o_node  n2 n4   
+   n7   o_node  n5 n6   
    printf   calc n5     
    printf   calc n6     
    printf   calc n7     

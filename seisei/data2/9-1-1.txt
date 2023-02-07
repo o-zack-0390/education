@@ -16,11 +16,11 @@ void printTown struct town t
   
 int main void   
 struct town list       
-       33 22  honmachi     30 17  kishine     40 18  kosugi    
-       12 11  kouen     27 35  fujisawa     50 11  kouza    
-       17 90  musashi     36 13  oono     40 53  ootsuka    
-       15 86  sagami     20 67  shibuya     34 15  uehara    
-    18 60  yoyogi      
+       33 22    
+       12 11    
+       17 90    
+       15 86    
+    18 60      
  
   int i j  
   double max  

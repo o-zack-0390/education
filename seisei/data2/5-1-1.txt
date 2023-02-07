@@ -6,8 +6,8 @@ int main void
         char inbuf 20   
         char outbuf L   
         int i p p2 n  
-        for i i L i   outbuf i   A  i  
-        outbuf L   \0   
+        for i i L i   outbuf i   i  
+        outbuf L    
         printf  inbuf   
         printf   p   
         printf   n   
@@ -33,6 +33,6 @@ int copyN char  out int pos char  in int num
                 out n  in i   
                 n    
           
-        out n   \0   
+        out n    
         return pos num  
  

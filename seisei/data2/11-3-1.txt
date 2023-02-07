@@ -13,7 +13,7 @@ int  btsearch  NODE  p  char  data
  
 int main void  
   
-        char data  20      this    book    good    flower    class    base    
+        char data  20        
         int i  
         for  i    i    i      
                 printf   data i    
@@ -33,10 +33,10 @@ int main void
         for   i    i    i      
                 mbtree top  data i    
           
-        btsearch top   class    
-        btsearch top   boot    
-        btsearch top   book    
-        btsearch top   bad    
+        btsearch top     
+        btsearch top     
+        btsearch top     
+        btsearch top     
         return  
   
  
@@ -49,7 +49,7 @@ void mbtree NODE  p1  char  data
         p2  left   NULL  
         p2  right   NULL  
         if  p2    NULL    
-                perror  can not allocate memory for a new node\n    
+                perror    
                 exit    
           
  

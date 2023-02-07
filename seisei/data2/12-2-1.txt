@@ -81,13 +81,13 @@ int main void
     int i  len  
     LIST part1   NULL  part2  mix  
     printf    
-    scanf   d    len   
+    scanf    len   
     for  i   len  i     i    
         part1   addL part1  i   
     part2   cutL part1  lenL part1      
-    showL  part1   part1   
-    showL  part2   part2   
+    showL   part1   
+    showL   part2   
     mix   mergeL part2  part1   
-    showL  mix     mix   
+    showL   mix   
     return  
  

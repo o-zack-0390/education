@@ -3,14 +3,14 @@ void printStrings char   p int n
 void swapStrings char   p int i int j   
 int main void   
         char  p 100   
-        char Orange    orange  Apple    apple  Peach    peach   
-        Grape    grape  Melon    melon   
+        char Orange     
+        Grape     
         int i j  
         p  Orange  p  Apple  p  Peach  p  Grape  p  Melon  
         printStrings p   
         while   
                 printf    
-                scanf   d  d   i  j   
+                scanf   i  j   
                 if i    i    j    j  break  
                 swapStrings p i j   
                 printStrings p   

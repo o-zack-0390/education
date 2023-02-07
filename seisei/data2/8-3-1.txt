@@ -10,15 +10,15 @@ int main int argc  char  argv
           fprintf stderr     
           return  
             
-      if   file   fopen argv    r       NULL   
+      if   file   fopen argv         NULL   
                   fprintf stderr    argv    
                   return  
                     
  
   while fgets line  MAXLINE  file     NULL   
-          for  i    line i      \0   i     
+          for  i    line i       i     
                   f    
-                  for  j    argv  j      \0   j     
+                  for  j    argv  j       j     
                           if  line i   j     argv  j    
                                   f    
                                   break  

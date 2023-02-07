@@ -20,11 +20,11 @@ int main
   char word LEN   
   int order  
  
-  ltop   cons   \0    
+  ltop   cons     
  
  
  
-  while scanf   s  d   word   order       
+  while scanf   word   order       
     ladd   cons order  word   
     add_node ltop  ladd   
     

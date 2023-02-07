@@ -6,7 +6,7 @@ int main void
  int query  min  
  while   
   printf    
-  scanf   d   query   
+  scanf   query   
   if query break  
   min calculate query data size   
   printf  query min   

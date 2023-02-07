@@ -27,7 +27,7 @@ int main void
  
   while     
     printf    
-    scanf   d    data i    
+    scanf    data i    
     if  data i      
       break  
     else 

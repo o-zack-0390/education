@@ -5,7 +5,7 @@ int main void
  int num_list 1000   
  int count    
  for int i    i     
-  scanf   d   num_list i    
+  scanf   num_list i    
   count    
   if num_list i      
    break  

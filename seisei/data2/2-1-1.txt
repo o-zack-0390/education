@@ -8,8 +8,8 @@ void towerH int num char dep char arv char tmp
 int main void   
         int n  
         printf    
-        scanf   d   n   
-        towerH n  A   C   B    
+        scanf   n   
+        towerH n    
         return  
   
  

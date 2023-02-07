@@ -1,7 +1,7 @@
 #include <stdio.h>
-int square1(int a);
+int  square1(int a);
 void square2(int *a);
-int * square3(int *a);
+int* square3(int *a);
 
 int main(void)
 {
@@ -26,16 +26,19 @@ int main(void)
     return 0;
 }
 
-int square1(int a){
+int square1(int a)
+{
     a=a*a;
     return a;
 }
 
-void square2(int *a){
+void square2(int *a)
+{
 	*a=(*a)*(*a);
 }
 
-int* square3(int *a){
+int* square3(int *a)
+{
     *a=(*a)*(*a);
     return a;
 }

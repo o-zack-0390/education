@@ -7,13 +7,13 @@ int main void
  
         while    
                 printf    
-                scanf   d   num   
+                scanf   num   
                 if num    
                         return  
                   
                 else if num    
                         printf    
-                        scanf   d   stack stackPtr    
+                        scanf   stack stackPtr    
                         stackPtr    
                   
                 else if num    

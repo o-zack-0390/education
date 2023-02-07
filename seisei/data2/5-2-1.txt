@@ -5,7 +5,7 @@ int maxip char  s
  
 int main void   
  
-        char  strs    v4va   4j4k8ghx   4j4kl23   2006456    
+        char  strs      
         char outb 80     
         int p i n  
         for i i i     
@@ -25,7 +25,7 @@ int copyN char  out int pos char  in int num
                 out n  in i   
                 n    
           
-        out n   \0   
+        out n    
         return pos num  
   
  
@@ -34,9 +34,9 @@ int maxip char  s
         int j  
         int max_val  max_index  count  
  
-        for j s j    \0  j     
+        for j s j    j     
  
-                if      s j     s j         
+                if    
  
                         if max_val   s j    
  

@@ -4,11 +4,11 @@ int main void
  FILE  fp2  
  char s 256   
  char c  
- if   fp   fopen  sampledata txt    r       NULL    
+ if   fp   fopen       NULL    
         printf    
         return  
       
-    if  fp2   fopen  secretdata txt    w       NULL   
+    if  fp2   fopen       NULL   
   printf    
   return  
       
@@ -26,7 +26,7 @@ int main void
  
  
                 printf    
-                while fscanf  fp    s   s     EOF   
+                while fscanf  fp    s     EOF   
                         printf    s   
                   
                 printf    

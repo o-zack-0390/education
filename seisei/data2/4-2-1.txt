@@ -10,7 +10,7 @@ int main void
         printarray data size   
         while   
                 printf    
-                scanf   d   query   
+                scanf   query   
                 if query break  
                 if binarysearcharray query data size    
                         printf    

@@ -7,7 +7,7 @@ int main void
  
         int total  
         printf    
-        scanf   d   total   
+        scanf   total   
         if 12 total   
                 printf    
                 total 12  
@@ -15,7 +15,7 @@ int main void
  
         printf  total   
         for i i total   i  
-                scanf   d   data i    
+                scanf   data i    
  
         for i i total   i   
                 for j i j total   j   

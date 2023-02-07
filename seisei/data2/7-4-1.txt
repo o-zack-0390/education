@@ -2,14 +2,14 @@
  define LEN 10 
  
 int main    
-        char sentence      ATGCATGAATTGCCAATGGAGCCCCTCGAAGCGTCCGAGTAA   
+        char sentence       
         char query LEN   
         char result LEN   
         int length  
         int stop  
         int i  j  
   printf    
-   scanf   s   query   
+   scanf   query   
  
   length   strlen query   
  
@@ -17,12 +17,12 @@ int main
   for i  stop     i     
           for j  j length  j     
  
-                  if sentence i j      \0    
+                  if sentence i j        
                         stop    
                         break  
                           
                   else  
-                          if   query j              query j     sentence i j    
+                          if   query j           query j     sentence i j    
  
                                   break  
                           else 
@@ -30,7 +30,7 @@ int main
                             
                   
           if  j    length   
-                          result j     \0   
+                          result j      
                           printf   i  result   
                             
                             

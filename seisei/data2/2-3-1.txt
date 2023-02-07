@@ -5,13 +5,13 @@ int main void
   
         int a b c n  
         printf    
-        scanf   d   a   
+        scanf   a   
         printf    
-        scanf   d   b   
+        scanf   b   
         printf    
-        scanf   d   c   
+        scanf   c   
         printf    
-        scanf   d   n   
+        scanf   n   
  
         printf    
         int i  

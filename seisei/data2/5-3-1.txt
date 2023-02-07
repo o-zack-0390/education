@@ -2,7 +2,7 @@
  define WLEN 20 
  define WNUM 10 
 int main    
-        char words WNUM  WLEN      Yokohama   Hiratuka   Sagamihara   Atsugi   Fujisawa   Chigasaki   Odawara   Kawasaki   Yamato   Yokosuka    
+        char words WNUM  WLEN        
         char tmp  
         int src dest  
         int i  
@@ -11,7 +11,7 @@ int main
                 printf  i words i    
  
         printf    
-        scanf   d  d   src  dest   
+        scanf   src  dest   
         if src    dest    src    WNUM src    dest    WNUM dest   
                 printf  src dest   
                 printf    
@@ -21,7 +21,7 @@ int main
         printf  words src  words dest    
  
         for i  i     
-                if words src  i    \0     words dest  i    \0   
+                if words src  i     
                         break  
                 tmp words src  i   
                 words src  i  words dest  i   

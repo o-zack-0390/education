@@ -13,7 +13,7 @@ int kaijou int n
 int main void   
         int x k  
         printf    
-        scanf   d   x   
+        scanf   x   
         k kaijou x    
         printf  x k   
         return  
