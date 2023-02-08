@@ -5,11 +5,11 @@ int* square3(int *a);
 
 int main(void)
 {
-	int k;
-	while(1)
-	{
-		printf("k="); scanf("%d",&k);
-		if(k<=0) break;
+    int k;
+    while(1)
+    {
+        printf("k="); scanf("%d",&k);
+        if(k<=0) break;
 
         printf("k value: %d\n",k);
         k=square1(k);
@@ -21,7 +21,7 @@ int main(void)
         square3(square3(&k));
 
         printf("Now, k=%d\n\n",k);
-	}
+    }
 
     return 0;
 }
@@ -34,7 +34,7 @@ int square1(int a)
 
 void square2(int *a)
 {
-	*a=(*a)*(*a);
+    *a=(*a)*(*a);
 }
 
 int* square3(int *a)

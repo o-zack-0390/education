@@ -19,27 +19,27 @@ int main(void)
 
 void minmax(int *data, int size, int *min, int *max)
 {
-   int i;
-   int min2;
+    int i;
+    int min2;
    
-   min2 = data[0];
-   for(i=0;i<size;i++)
-   {
-	   if(data[i]<min2)
-	   {
-		   min2 = data[i];
-		   *min = i;
-            }
+    min2 = data[0];
+    for(i=0;i<size;i++)
+    {
+        if(data[i]<min2)
+        {
+            min2 = data[i];
+            *min = i;
+        }
     }
 
     int j;
     int max2;
         
-	max2=data[0];
+    max2=data[0];
     for(j=0;j<size;j++)
-	{
+    {
         if(max2<data[j])
-		{
+        {
             max2 = data[j];
             *max = j;
         }

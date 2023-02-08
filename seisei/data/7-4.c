@@ -9,39 +9,39 @@ int main()
     int  length;
     int  stop;
     int  i, j;
-	
-	printf("input seach character :");
-	scanf ("%s", query);
-	
-	length = strlen(query);
-	stop   = 0;
-	
-	for(i=0; stop == 0; i++)
-	{
+    
+    printf("input seach character :");
+    scanf ("%s", query);
+    
+    length = strlen(query);
+    stop   = 0;
+    
+    for(i=0; stop == 0; i++)
+    {
         for(j=0; j<length; j++)
-		{
-			if(sentence[i+j] == '\0')
-			{
-				stop = 1;
+        {
+            if(sentence[i+j] == '\0')
+            {
+                stop = 1;
                 break;
             }
-			
+            
             else
-			{
-				if((query[j] != '.') && (query[j] != sentence[i+j]))
-					break;
+            {
+                if((query[j] != '.') && (query[j] != sentence[i+j]))
+                    break;
                           
-				else
+                else
                     result[j] = sentence[i+j];
             }
-		}
+        }
           
-		if (j == length)
-		{
-			result[j] = '\0';
-			printf("Detect: %2d %s\n", i, result);
+        if (j == length)
+        {
+            result[j] = '\0';
+            printf("Detect: %2d %s\n", i, result);
         }
     }
-	
-  return 0;
+    
+    return 0;
 }

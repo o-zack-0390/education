@@ -8,9 +8,9 @@ int main(void)
     char outbuf[L];
     int  i, p, p2, n;
         
-	for(i=0;i<L;i++)
-		outbuf[i]='A'+i;
-	
+    for(i=0;i<L;i++)
+        outbuf[i]='A'+i;
+    
     outbuf[L-1]='\0';
     printf("in:");  scanf("%s",inbuf);
     printf("pos:"); scanf("%d",&p);
@@ -19,14 +19,14 @@ int main(void)
 
     for(i=0;i<L;i++)
     {
-		if(outbuf[i]==0)
-			printf("outbuf[%d]=null\n",i);
+        if(outbuf[i]==0)
+            printf("outbuf[%d]=null\n",i);
                 
-		else
-			printf("outbuf[%d]='%c'\n",i,outbuf[i]);
+        else
+            printf("outbuf[%d]='%c'\n",i,outbuf[i]);
     }
         
-	printf("pos=%d num=%d ret=%d outbuf=\"%s\"\n",p,n,p2,outbuf);
+    printf("pos=%d num=%d ret=%d outbuf=\"%s\"\n",p,n,p2,outbuf);
     return 0;
 }
 
@@ -34,13 +34,13 @@ int main(void)
 int copyN(char *out,int pos,char *in,int num)
 {
     int i, n = pos;
-	
+    
     for(i=0;i<num;i++)
-	{
+    {
         out[n]=in[i];
-		n++;
+        n++;
     }
     out[n]='\0';
-	
+    
     return pos+num;
 }
